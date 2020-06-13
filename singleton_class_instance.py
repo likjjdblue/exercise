@@ -9,7 +9,7 @@ def cache_cls_instance(cls):
         def __call__(self, *args, **kwargs):
             if not self.instance:
                 print ('NEW....')
-                self.instance = self.obj(*args, **kwargs)
+                self.instance = self.obj(cls)
             else:
                 print ('EXIST....')
             return self.instance
@@ -20,12 +20,19 @@ def cache_cls_instance(cls):
 
 @cache_cls_instance
 class Foo:
-    def foo(self):
-        print ('Foo')
+    def __init__(self, name):
+        self.name = name
+
+    def display(self):
+        print (self.name)
+
+    def bar(self,bar):
+        self.name = bar
 
 
-
-a = Foo()
-b = Foo()
+a = Foo(name = 'a')
+b = Foo(name = 'b')
+b.bar('c')
+b.display()
 print (a is b)
-a.foo()
+
