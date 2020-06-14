@@ -39,7 +39,7 @@ def limit_instance_number(cls_name = None, *, num = 1):
        pass
 
     Example 2:
-    @limit_instance_number
+    @limit_instance_number()
     def FOO:
        pass
 
