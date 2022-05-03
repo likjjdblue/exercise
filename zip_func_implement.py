@@ -18,9 +18,13 @@ def ZipNonInterator(*args):
     return TmpResult
 
 
+if __name__ == '__main__':
+    TmpListA = [1, 2, 3]
+    TmpListB = [4, 5, 6]
+    TmpListC = [7, 8, 9]
 
-TmpListA = [1, 2, 3]
-TmpListB = [4, 5, 6]
-TmpListC = [7, 8, 9]
+    pairs = [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]
 
-ZipNonInterator(TmpListA, TmpListB, TmpListC)
+
+    ZipNonInterator(TmpListA, TmpListB, TmpListC)
+    ZipNonInterator(*pairs)
